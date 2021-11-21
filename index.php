@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php 
      include_once "conf/default.inc.php";
-     include_once "fdata.php";
      require_once "conf/Conexao.php";
      $title = "Vendas";
      $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : "1";
@@ -32,8 +31,10 @@
     $pdo = Conexao::getInstance(); 
     $consulta = $pdo->query($sql);
     while ($linha = $consulta->fetch(PDO::FETCH_BOTH)){
-        echo "Nome: {$linha['nome']} - Fixo: {$linha['fixo']} - <a href='venda-detalhes.php?id={$linha['id']}'>Detalhes</a><br/>";
+        echo "Nome: {$linha['nome']} - Fixo: {$linha['fixo']} - <a href='venda-detalhes_.php?id={$linha['id']}'>Detalhes</a><br/>";
     }
+
+    
 ?>
 </body>
 </html>
